@@ -1,4 +1,4 @@
-Algoritmo Ejercicio2
+Algoritmo Cajero
 	Definir nombre, opc Como Caracter
 	Definir saldoI, saldoF, Deposito, Retiro, totalDep, totalRet, DepEfec, DepCheq Como Real
 	Definir cantDep, cantRet Como Caracter
