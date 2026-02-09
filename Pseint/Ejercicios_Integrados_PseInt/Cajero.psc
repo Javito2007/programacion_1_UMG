@@ -26,7 +26,7 @@ Algoritmo Cajero
 		Escribir '(R) Retiro'
 		Escribir '(F) Fin'
 		Leer opc
-		si opc="D" Entonces
+		si (opc="D") o (opc='d') Entonces
 			Escribir '(1) Efectivo'
 			Escribir '(2) Cheque'
 			Leer opc
@@ -37,6 +37,7 @@ Algoritmo Cajero
 				Escribir 'Monto depositado: ', Deposito
 				cantDep=cantDep+ConvertirATexto(Deposito)+' '
 				DepEfec=DepEfec+Deposito
+				saldoF = saldoF+DepEfec
 			FinSi
 			si opc='2'
 				Escribir 'Ingrese monto de Cheque'
@@ -46,12 +47,11 @@ Algoritmo Cajero
 				Escribir 'Monto depositado: ', (Deposito- (Deposito*0.01))
 				cantDep=cantDep+ConvertirATexto(Deposito- (Deposito*0.01))+',  '
 				DepCheq=DepCheq+(Deposito- (Deposito*0.01))
-				saldoF=saldoI+(Deposito-(Deposito*0.01))
+				saldoF = saldoF+DepCheq
 			FinSi
 			totalDep = DepEfec + DepCheq
-			saldoF=saldoF+totalDep
 		FinSi
-		si opc = 'R' Entonces
+		si (opc='R') O (opc='r') Entonces
 			Escribir 'Ingrese la cantidad que desea retirar:: '
 			Leer Retiro
 			si Retiro <= saldoF Entonces
@@ -66,10 +66,10 @@ Algoritmo Cajero
 				Escribir 'Sobregiro'
 			FinSi
 		FinSi
-		si opc='F' Entonces
+		si (opc='F')O(opc='f') Entonces
 			Escribir 'Nombre: ', nombre
 			Escribir 'Saldo Inicial: ', saldoI
-			Escribir 'Saldo Final: ', saldoF
+			Escribir 'Saldo Final: ', saldoF + saldoI
 			Escribir 'Depositos:: ', cantDep
 			Escribir 'Depositos efectivo:: ', DepEfec
 			Escribir 'Depositos Cheque:: ', DepCheq
