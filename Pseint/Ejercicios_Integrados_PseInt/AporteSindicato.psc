@@ -1,11 +1,11 @@
 Algoritmo AporteSindicato
-	Definir edad Como Entero
-	Definir salario, calculo Como Real
+	Definir edadUsuario Como Entero
+	Definir salarioUsuario, calculo Como Real
 	
 	Escribir 'Ingresar edad'
-	Leer edad
+	Leer edadUsuario
 	Escribir 'Ingresar salario'
-	Leer salario
+	Leer salarioUsuario
 	
 	si (salario<10000) Entonces
 		calculo=salario*0.005
@@ -22,7 +22,7 @@ Algoritmo AporteSindicato
 			FinSi
 		FinSi
 	FinSi
-	si edad<=30 Entonces
+	si edadUsuario<=30 Entonces
 		calculo=calculo + (calculo*0.2)
 	FinSi
 	Escribir 'el aporte es:: ', calculo
